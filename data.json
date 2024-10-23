@@ -1,0 +1,30 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "exampleUser",
+            "email": "user@example.com",
+            "password": "hashedPassword1",  
+            "isActive": true
+        },
+        {
+            "id": 2,
+            "username": "anotherUser",
+            "email": "another@example.com",
+            "password": "hashedPassword2",
+            "isActive": false
+        },
+        {
+            "id": 3,
+            "username": "thirdUser",
+            "email": "third@example.com",
+            "password": "hashedPassword3",
+            "isActive": true
+        }
+    ],
+    "settings": {
+        "siteName": "My Awesome Website",
+        "maxLoginAttempts": 5,
+        "maintenanceMode": false
+    }
+}

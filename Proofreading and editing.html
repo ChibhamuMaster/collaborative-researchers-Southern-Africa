@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dissertation Moderation</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #002244;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        header .subtitle {
+            font-size: 1.2rem;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        nav button {
+            padding: 10px 20px;
+            background-color: #007ACC;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+
+        nav button:hover {
+            background-color: #005FA3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .intro-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .intro-section h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .intro-section p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .services-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .service {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            flex: 1 1 30%;
+            text-align: center;
+        }
+
+        .service h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .service button {
+            background-color: #007ACC;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .service button:hover {
+            background-color: #005FA3;
+        }
+
+        .how-it-works-section {
+            margin-bottom: 40px;
+        }
+
+        .how-it-works-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .how-it-works-section .step {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .how-it-works-section .step h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #002244;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .services-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Dissertation Moderation & Research Assistance</h1>
+    <p class="subtitle">Expert Guidance for Every Stage of Your Dissertation</p>
+</header>
+
+<nav>
+    <button onclick="window.location.href='index.html'">Return to Home</button>
+
+</nav>
+
+<div class="container">
+    <!-- Introduction Section -->
+    <section class="intro-section">
+        <h2>What is Dissertation Moderation?</h2>
+        <p>
+            Dissertation moderation is a critical process that ensures your research is not only academically rigorous but also aligned with your broader research goals. According to Creswell (2014), research proposals and dissertations must adhere to specific standards to ensure clarity, coherence, and academic value. We provide tailored services to assist in the conceptualisation and development of your research proposal, ensuring it meets the requirements set forth by your institution and the broader academic community. Our services include refining your research questions, aligning your methodology with best practices (Creswell & Poth, 2018), and ensuring the overall structure adheres to academic norms. Furthermore, we offer support in addressing supervisor comments, a process that requires careful interpretation and response to maintain the integrity of your work. Addressing feedback is an iterative process that contributes to refining your argument and enhancing the credibility of your research (Maxwell, 2013). In addition, we provide data analysis support, helping you navigate both quantitative and qualitative methodologies, as described by Creswell (2017). This ensures that your data analysis is rigorous and your findings are accurately reported, in line with established academic standards.
+        </p>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="service">
+            <h3>Research Proposal Assistance</h3>
+            <p>We help structure, write, and refine your research proposal to meet university standards and set a solid foundation.</p>
+            <button onclick="selectService('Research Proposal Assistance')">Select This Service</button>
+        </div>
+        <div class="service">
+            <h3>Supervisor Comment Clarification</h3>
+            <p>We assist in understanding and responding to supervisor comments, ensuring feedback is fully addressed.</p>
+            <button onclick="selectService('Supervisor Comment Clarification')">Select This Service</button>
+        </div>
+        <div class="service">
+            <h3>Data Analysis Support</h3>
+            <p>We guide you through the process of analysing both qualitative and quantitative data for your research.</p>
+            <button onclick="selectService('Data Analysis Support')">Select This Service</button>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works-section">
+        <h2>How It Works</h2>
+        <div class="step">
+            <h4>Step 1: Initial Consultation</h4>
+            <p>A 30-minute meeting to understand your current needs and stage in the dissertation process.</p>
+        </div>
+        <div class="step">
+            <h4>Step 2: Proposal Drafting and Feedback</h4>
+            <p>We help draft and refine your proposal, ensuring it meets academic standards and provides a strong foundation.</p>
+        </div>
+        <div class="step">
+            <h4>Step 3: Supervisor Comment Clarification</h4>
+            <p>We help you understand and address feedback from your supervisor to keep your dissertation on track.</p>
+        </div>
+        <div class="step">
+            <h4>Step 4: Data Analysis Assistance</h4>
+            <p>We guide you through data analysis to interpret and report results effectively.</p>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>© 2024 Dissertation Moderation Services. All rights reserved.</p>
+    <a href="Booking online tutorials.html">Submit Your Quotation</a>
+</footer>
+
+<script>
+    function selectService(service) {
+        const bookingUrl = "Booking online tutorials.html?service=" + encodeURIComponent(service);
+        window.location.href = bookingUrl;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotation Generator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        /* General page styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('your_background_image_url.jpg'); /* Update to your desired background image */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+
+        form {
+            background-color: rgba(7, 41, 92, 0.85);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input, select, textarea {
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        button {
+            background-color: #a72828;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #758821;
+        }
+
+        .return-home {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .return-home button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .return-home button:hover {
+            background-color: #0056b3;
+        }
+
+        h2 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #888;
+        }
+
+        /* Responsive design */
+        @media (max-width: 400px) {
+            form {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Quotation Generator</h2>
+    <form id="quotationForm">
+        <input type="text" id="fullName" placeholder="Full Name" required>
+        
+        <label for="module">Select Module</label>
+        <select id="module" name="module" required>
+            <option value="" disabled selected>Select a module</option>
+            <!-- Disaster Risk Reduction -->
+            <optgroup label="Disaster Risk Reduction">
+                <option value="BCU101">Business Communication (BCU101)</option>
+                <option value="MAN101">Business Management (MAN101)</option>
+                <option value="MEC152">Economics for Managers I (MEC152)</option>
+                <option value="EUC152">End User Computing (EUC152)</option>
+                <option value="DRR101">Disaster Risk Reduction I (DRR101)</option>
+                <option value="INF152">Information Management (INF152)</option>
+                <option value="BLA101">Business Law (BLA101)</option>
+                <option value="LLA101">Labour Law I (LLA101)</option>
+                <option value="ACC152">Accounting I (ACC152)</option>
+                <option value="DRR201">Disaster Risk Reduction II (DRR201)</option>
+                <option value="DEC20B">Development Economics (DEC20B)</option>
+                <option value="LDR101">Leadership (LDR101)</option>
+                <option value="MAN201">Management II (MAN201)</option>
+                <option value="DEC20A">Governmental Economics (DEC20A)</option>
+                <option value="CGE101">Corporate Governance (CGE101)</option>
+                <option value="DRR301">Disaster Risk Reduction III (DRR301)</option>
+                <option value="MAN301">Management III (MAN301)</option>
+                <option value="REM372">Research Methodology (REM372)</option>
+                <option value="FMA101">Financial Management (FMA101)</option>
+                <option value="PFB101">Public Sector Financial Management (PFB101)</option>
+            </optgroup>
+            <!-- Entrepreneurship & Innovation Management -->
+            <optgroup label="Entrepreneurship & Innovation Management">
+                <option value="EIM101">Entrepreneurship & Innovation Management I (EIM101)</option>
+                <option value="EIM201">Entrepreneurship & Innovation Management II (EIM201)</option>
+                <option value="EIM301">Entrepreneurship & Innovation Management III (EIM301)</option>
+            </optgroup>
+            <!-- Add similar optgroups for other categories if needed -->
+        </select>
+        
+        <label for="duration">Duration (hours)</label>
+        <input type="number" id="duration" placeholder="Duration (hours)" required min="1">
+        
+        <textarea id="clarification" placeholder="Clarification" required></textarea>
+        <button type="submit">Generate Quotation</button>
+    </form>
+
+    <div class="return-home">
+        <button onclick="returnHome()">Return Home</button>
+    </div>
+
+    <script>
+        // Function to handle the return home button
+        function returnHome() {
+            window.location.href = 'Index.html'; // Modify the path if needed
+        }
+
+        // Function to generate a PDF based on the form data
+        document.getElementById('quotationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const fullName = document.getElementById('fullName').value;
+            const module = document.getElementById('module').value;
+            const duration = document.getElementById('duration').value;
+            const clarification = document.getElementById('clarification').value;
+
+            // Ensure that all fields are filled
+            if (!fullName || !module || !duration || !clarification) {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            // Create a new jsPDF instance
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            // Add content to the PDF with a structured table format
+            doc.setFontSize(16);
+            doc.text("Quotation", 20, 20);
+            doc.setFontSize(12);
+            doc.text(`Generated for: ${fullName}`, 20, 40);
+            doc.text(`Module: ${module}`, 20, 50);
+            doc.text(`Duration: ${duration} hours`, 20, 60);
+            doc.text(`Clarification: ${clarification}`, 20, 70);
+            doc.text("Total Fee: ___________", 20, 80); // Placeholder for total fee
+
+            // Create a table with headings
+            doc.autoTable({
+                head: [['Section', 'Details']],
+                body: [
+                    ['Full Name', fullName],
+                    ['Module', module],
+                    ['Duration', `${duration} hours`],
+                    ['Clarification', clarification],
+                    ['Total Fee', '__________'] // Placeholder for the total fee to be filled by the editor
+                ],
+                startY: 90,
+                styles: {
+                    cellPadding: 2,
+                    fontSize: 10,
+                },
+                headStyles: {
+                    fillColor: [7, 41, 92],
+                    textColor: [255, 255, 255],
+                    fontStyle: 'bold',
+                },
+                alternateRowStyles: {
+                    fillColor: [238, 238, 238],
+                },
+            });
+
+            // Save the PDF
+            doc.save('quotation.pdf');
+
+            // Display message to user (mock-up for sending email)
+            alert(`A copy of the PDF has been generated and sent to ${document.getElementById('email').value}.`); // Ensure you have an email input for this to work
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+  <user id="1">
+    <username>admin</username>
+    <passwordHash>$2b$10$w5NVzjKUo.dHAf82yCqXxeQZL/Sb1zBhnuy5NUKnzwcezO.13xMXy</passwordHash>
+  </user>
+  <user id="2">
+    <username>newuser</username>
+    <passwordHash>$2b$10$w89xCBtStcKMQ/zGvmMJ9u3O6RCd9cOrxLS8b58zZ0EC/U2vRyqK6</passwordHash>
+  </user>
+</users>

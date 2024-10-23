@@ -1,0 +1,40 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Logs
+logs/
+*.log
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Environment variables
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Ignore compiled JavaScript files if you're using TypeScript or Babel
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.swp
+
+# Ignore XML data files (if they are dynamically generated or not needed in the repo)
+data.xml
+
+# Ignore package-lock.json or yarn.lock if you don't want to commit lock files
+# Although, it's recommended to commit this for consistency across different environments
+# Uncomment if you want to ignore lock files
+# package-lock.json
+# yarn.lock

@@ -1,0 +1,269 @@
+/* styles.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #003f38;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #004d40;
+}
+
+/* Ticker Styles */
+.ticker {
+    background-color: #e0f7fa;
+    padding: 15px;
+    border-radius: 8px;
+    overflow: hidden; /* Prevent overflow */
+    position: relative;
+    white-space: nowrap; /* Keep the content in a single line */
+}
+
+.ticker p {
+    display: inline-block;
+    animation: ticker 70s linear infinite; /* Animation duration */
+    font-size: 1.5em; /* Increased font size for better visibility */
+    margin: 0;
+    will-change: transform; /* Optimize animation performance */
+    font-weight: bold; /* Make text bold */
+    color: gold; /* Starting color */
+    animation: ticker 70s linear infinite, colorChange 3s infinite; /* Animation for color change */
+}
+
+/* Ticker Styles */
+.ticker {
+    background-color: #e0f7fa;
+    padding: 15px;
+    border-radius: 8px;
+    overflow: hidden; /* Prevent overflow */
+    position: relative;
+    white-space: nowrap; /* Keep the content in a single line */
+    border: 5px solid gold; /* Starting border color */
+    animation: borderColorChange 3s infinite; /* Animation for border color change */
+}
+
+/* Ticker Styles */
+.ticker {
+    background-color: #e0f7fa;
+    padding: 15px;
+    border-radius: 8px;
+    overflow: hidden; /* Prevent overflow */
+    position: relative;
+    white-space: nowrap; /* Keep the content in a single line */
+    border: 5px solid gold; /* Starting border color */
+    animation: borderColorChange 3s infinite; /* Animation for border color change */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Box shadow for depth effect */
+}
+
+/* Ticker Styles */
+.ticker {
+    /* Gradient background to enhance visual appeal */
+    background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+    /* Padding around the ticker for spacing */
+    padding: 15px;
+    /* Rounded corners for a softer look */
+    border-radius: 8px;
+    /* Prevents content from overflowing */
+    overflow: hidden; 
+    /* Positioning relative to allow absolute positioning of inner elements if needed */
+    position: relative;
+    /* Prevents line breaks and keeps text in a single line */
+    white-space: nowrap; 
+    /* Solid border for visual separation */
+    border: 5px solid gold; 
+    /* Animation to change the border color */
+    animation: borderColorChange 3s infinite; 
+    /* Box shadow for depth effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+/* Ticker Text Styles */
+.ticker p {
+    /* Inline-block to allow horizontal layout */
+    display: inline-block;
+    /* Animation duration */
+    animation-duration: 70s;
+    /* Infinite loop */
+    animation-iteration-count: infinite;
+    /* Animation direction */
+    animation-direction: linear;
+    /* Animation timing function */
+    animation-timing-function: linear;
+    /* Animation fill mode */
+    animation-fill-mode: forwards;
+    /* Animation for text scrolling effect */
+    animation: ticker 60s linear infinite; 
+    /* Increase font size for better visibility */
+    font-size: 1.5em; 
+    /* Remove default margin */
+    margin: 0;
+    /* Optimize performance during animation */
+    will-change: transform; 
+    /* Make the text bold for emphasis */
+    font-weight: bold; 
+    /* Default text color */
+    color: black; 
+    /* No delay for the text animation */
+    animation-delay: 0s; 
+    /* Smooth transition for text color changes */
+    transition: color 0.3s; 
+}
+
+/* Animation for ticker scrolling effect */
+@keyframes ticker {
+    0% {
+        /* Start position off the right edge of the container */
+        transform: translateX(100%);
+    }
+    100% {
+        /* End position off the left edge of the container */
+        transform: translateX(-100%);
+    }
+}
+
+/* Animation for changing the border color */
+@keyframes borderColorChange {
+    0% {
+        /* Initial border color */
+        border-color: gold; 
+    }
+    25% {
+        /* Transition to silver */
+        border-color: silver; 
+    }
+    50% {
+        /* Transition to peach */
+        border-color: peach; 
+    }
+    75% {
+        /* Transition to red */
+        border-color: red; 
+    }
+    100% {
+        /* Loop back to the initial color */
+        border-color: gold; 
+    }
+}
+
+/* Pause the ticker animation when hovered */
+.ticker:hover p {
+    /* Pause the text animation on hover */
+    /* Pause the text animation on hover for better readability */
+    animation-play-state: paused; 
+    /* Pause the border animation on hover */
+    animation-play-state: paused; 
+    /* Pause the border animation on hover for better readability */
+    animation-play-state: paused;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 600px) {
+    .ticker p {
+        /* Reduce font size on smaller screens for better fit */
+        font-size: 1.2em; 
+    }
+}
+
+
+
+/* Section Styles */
+section {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    border-radius: 8px;
+    background-color: rgb(76, 149, 245);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    border-radius: 8px;
+    background-color: rgb(76, 149, 245);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #000000;
+}
+
+/* Assessment Box Styles */
+.assessment-box {
+    background-color: #0ffaee;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Library Box Styles */
+.library-box {
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    background-color: #b79ff3;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Section Styles */
+.search-section {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #b2dfdb;
+    border-radius: 8px;
+}
+
+.search-section h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #00796b;
+}
+
+/* Contact Section Styles */
+#contact {
+    background-color: #e0f7fa;
+    padding: 20px;
+    color: #010808;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border-color: #010808;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 8px;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    text-decoration: underline;
+    color: #ffffff;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #022724;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+}
+    

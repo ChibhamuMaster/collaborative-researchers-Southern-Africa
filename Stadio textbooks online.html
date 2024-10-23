@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stadio Online Textbooks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('background.jpg'); /* Replace with your background image path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto;
+            max-width: 200px; /* Adjust the size of the logo */
+        }
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .search-input {
+            padding: 10px;
+            width: 60%;
+            max-width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .search-button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            display: none; /* Initially hide the table */
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .password-input {
+            display: none;
+            margin-top: 10px;
+        }
+        .ethical-clearance {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .scholar-link {
+            margin-top: 10px;
+            display: inline-block;
+            position: relative;
+        }
+        .scholar-link img {
+            height: 100px; /* Adjust the size of the Google Scholar logo */
+            margin-right: 5px;
+        }
+        .not-found {
+            color: rgb(102, 255, 0);
+            text-align: center;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            th, td {
+                font-size: 14px;
+            }
+            .button {
+                padding: 8px 12px;
+            }
+            .search-input {
+                width: 80%; /* Make search input responsive */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="stadio logo.jpg" alt="Stadio Logo" class="logo"> <!-- Replace with your Stadio logo path -->
+        <h1>Stadio Online Textbooks</h1>
+
+        <div class="ethical-clearance">
+            <h2>Ethical Clearance Form</h2>
+            <form id="ethicalClearanceForm" onsubmit="return confirmSubmission()">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="agreement">
+                    <p>By signing this form, you agree to the following:</p>
+                    <ul>
+                        <li>You will not resell or use the textbooks for any purpose other than personal study or educational use.</li>
+                        <li>You understand that any violation of this agreement may result in legal action.</li>
+                        <li>All materials obtained from Master Editors are for your personal use only.</li>
+                    </ul>
+                </div>
+                <div class="signature">
+                    <label for="signature">Signature:</label>
+                    <input type="text" id="signature" placeholder="Type your name as signature" required>
+                </div>
+                <button type="submit" class="button">Submit</button>
+            </form>
+        </div>
+
+        <div class="search-container" style="display: none;"> <!-- Hide search container initially -->
+            <input type="text" id="moduleCode" class="search-input" placeholder="Enter Module Code" />
+            <button class="search-button" onclick="searchTextbooks()">Search</button>
+        </div>
+        <div id="notFoundMessage" class="not-found" style="display: none;">Textbooks not found for the entered module code.</div>
+
+        <table id="textbookTable">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Availability</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-module="HRM301">
+                    <td><a href="downloads/HRM300_Textbook.pdf" download>HRM300 Textbook.pdf</a></td>
+                    <td>Author 1</td>
+                    <td>
+                        <button class="button" onclick="download('free')">Download Free</button>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr data-module="TRM100">
+                    <td>TRM100 textbook.pdf</td>
+                    <td></td>
+                    <td>
+                        <button class="button" onclick="showPasswordInput('Justina1992@')">Purchase</button>
+                        <div class="password-input" id="passwordInput1">
+                            <input type="password" placeholder="Enter Password" id="password1">
+                            <button class="button" onclick="validatePassword('Justina1992@', 'password1', 'TRM100 textbook.pdf')">Submit</button>
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+                <!-- Add more textbooks as needed -->
+            </tbody>
+        </table>
+
+        <div class="footer">
+            <a href="https://scholar.google.com/" target="_blank" class="scholar-link">
+                <img src="google scholar.jpeg" alt="Google Scholar Logo"> <!-- Replace with your Google Scholar logo path -->
+                Access Online Journals via Google Scholar
+            </a>
+            <br>
+            <a href="Index.html" class="button">Return Home</a>
+        </div>
+    </div>
+
+    <script>
+        function confirmSubmission() {
+            alert('Thank you for completing the Ethical Clearance Form. You have agreed to the terms and your submission has been recorded.');
+            // Show the search container and textbook table after submission
+            document.querySelector('.search-container').style.display = 'block';
+            document.getElementById('textbookTable').style.display = 'table'; // Show the textbook table
+            return false; // Prevent form submission
+        }
+
+        function download(type) {
+            if (type === 'free') {
+                alert('You can now download the textbook for free.');
+                // Implement actual download logic here if needed
+            }
+        }
+
+        function showPasswordInput(correctPassword) {
+            const passwordInput = document.getElementById('passwordInput1');
+            passwordInput.style.display = 'block';
+        }
+
+        function validatePassword(correctPassword, inputId, textbook) {
+            const password = document.getElementById(inputId).value;
+            if (password === correctPassword) {
+                alert(`Access granted to download ${textbook}.`);
+                
+            } else {
+                alert('Incorrect password. Please try again.');
+            }
+        }
+
+        function searchTextbooks() {
+            const moduleCode = document.getElementById('moduleCode').value.toUpperCase();
+            const rows = document.querySelectorAll('#textbookTable tbody tr');
+            let found = false;
+
+            rows.forEach(row => {
+                if (row.getAttribute('data-module') === moduleCode) {
+                    row.style.display = '';
+                    found = true;
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+
+            document.getElementById('notFoundMessage').style.display = found ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>

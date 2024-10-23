@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Assessment</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            color: #343a40;
+            transition: background-color 0.5s;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            transition: border 0.3s;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .timer {
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #dc3545;
+        }
+
+        .assessment-question {
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .answer-options {
+            margin: 10px 0;
+        }
+
+        .option {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .option:hover {
+            background-color: #f1f1f1;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+
+        .back-button {
+            background-color: #28a745;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #218838;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            button,
+            .back-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Online Assessment</h1>
+        <div class="timer" id="timer">Time Remaining: <span id="time">20:00</span></div>
+        <form id="assessmentForm">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+
+            <!-- Questions -->
+            <div class="assessment-question">
+                <p><strong>1. What is Epistemology?</strong></p>
+                <div class="answer-options">
+                    <label class="option"><input type="radio" name="q1" value="a"> A) The study of knowledge.</label>
+                    <label class="option"><input type="radio" name="q1" value="b"> B) The study of living organisms.</label>
+                    <label class="option"><input type="radio" name="q1" value="c"> C) The study of society.</label>
+                </div>
+            </div>
+
+            <div class="assessment-question">
+                <p><strong>2. What is Qualitative Research?</strong></p>
+                <div class="answer-options">
+                    <label class="option"><input type="radio" name="q2" value="a"> A) Research that focuses on numbers and statistics.</label>
+                    <label class="option"><input type="radio" name="q2" value="b"> B) Research that explores phenomena in a detailed manner.</label>
+                    <label class="option"><input type="radio" name="q2" value="c"> C) Research that uses experiments to test hypotheses.</label>
+                </div>
+            </div>
+
+            <div class="assessment-question">
+                <p><strong>3. What is Mixed Methods Research?</strong></p>
+                <div class="answer-options">
+                    <label class="option"><input type="radio" name="q3" value="a"> A) Combining qualitative and quantitative approaches.</label>
+                    <label class="option"><input type="radio" name="q3" value="b"> B) Using only qualitative approaches.</label>
+                    <label class="option"><input type="radio" name="q3" value="c"> C) Using only quantitative approaches.</label>
+                </div>
+            </div>
+
+            <div class="assessment-question">
+                <p><strong>4. What is the purpose of coding in qualitative research?</strong></p>
+                <div class="answer-options">
+                    <label class="option"><input type="radio" name="q4" value="a"> A) To convert qualitative data into quantitative data.</label>
+                    <label class="option"><input type="radio" name="q4" value="b"> B) To organize and interpret qualitative data.</label>
+                    <label class="option"><input type="radio" name="q4" value="c"> C) To conduct experiments on qualitative data.</label>
+                </div>
+            </div>
+
+            <div class="assessment-question">
+                <p><strong>5. Which of the following is a step in developing variables?</strong></p>
+                <div class="answer-options">
+                    <label class="option"><input type="radio" name="q5" value="a"> A) Identifying the research question.</label>
+                    <label class="option"><input type="radio" name="q5" value="b"> B) Creating a survey instrument.</label>
+                    <label class="option"><input type="radio" name="q5" value="c"> C) Determining how variables will be measured.</label>
+                </div>
+            </div>
+
+            <div class="assessment-question">
+                <p><strong>6. What are the ethical considerations in research?</strong></p>
+                <div class="answer-options">
+                    <label class="option"><input type="radio" name="q6" value="a"> A) Ensuring the confidentiality of participants.</label>
+                    <label class="option"><input type="radio" name="q6" value="b"> B) Avoiding biases in the analysis.</label>
+                    <label class="option"><input type="radio" name="q6" value="c"> C) All of the above.</label>
+                </div>
+            </div>
+
+            <div class="assessment-question">
+                <p><strong>7. Which citation style uses footnotes?</strong></p>
+                <div class="answer-options">
+                    <label class="option"><input type="radio" name="q7" value="a"> A) APA Style.</label>
+                    <label class="option"><input type="radio" name="q7" value="b"> B) Chicago Style.</label>
+                    <label class="option"><input type="radio" name="q7" value="c"> C) Harvard Style.</label>
+                </div>
+            </div>
+
+            <div class="assessment-question">
+                <p><strong>8. What is the primary goal of data analysis?</strong></p>
+                <div class="answer-options">
+                    <label class="option"><input type="radio" name="q8" value="a"> A) To validate the research hypothesis.</label>
+                    <label class="option"><input type="radio" name="q8" value="b"> B) To draw meaningful conclusions from data.</label>
+                    <label class="option"><input type="radio" name="q8" value="c"> C) To present data visually.</label>
+                </div>
+            </div>
+
+            <div class="assessment-question">
+                <p><strong>9. What is a literature review?</strong></p>
+                <div class="answer-options">
+                    <label class="option"><input type="radio" name="q9" value="a"> A) A summary of existing research on a topic.</label>
+                    <label class="option"><input type="radio" name="q9" value="b"> B) A detailed analysis of a single study.</label>
+                    <label class="option"><input type="radio" name="q9" value="c"> C) A proposal for new research.</label>
+                </div>
+            </div>
+
+            <div class="assessment-question">
+                <p><strong>10. What is the importance of peer review in research?</strong></p>
+                <div class="answer-options">
+                    <label class="option"><input type="radio" name="q10" value="a"> A) It ensures the quality and credibility of research.</label>
+                    <label class="option"><input type="radio" name="q10" value="b"> B) It increases the visibility of the research.</label>
+                    <label class="option"><input type="radio" name="q10" value="c"> C) It provides funding for research.</label>
+                </div>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <footer>
+        <a class="back-button" href="index.html">Go Back</a>
+    </footer>
+
+    <script>
+        const correctAnswers = {
+            q1: 'a',
+            q2: 'b',
+            q3: 'a',
+            q4: 'b',
+            q5: 'c',
+            q6: 'c',
+            q7: 'b',
+            q8: 'b',
+            q9: 'a',
+            q10: 'a'
+        };
+
+        const timerElement = document.getElementById('time');
+        let totalTime = 1200; // 20 minutes in seconds
+
+        function startTimer() {
+            const timer = setInterval(() => {
+                const minutes = Math.floor(totalTime / 60);
+                const seconds = totalTime % 60;
+                timerElement.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+                if (totalTime <= 0) {
+                    clearInterval(timer);
+                    alert('Time is up! Submitting your assessment.');
+                    calculateScore();
+                }
+
+                totalTime--;
+            }, 1000);
+        }
+
+        function calculateScore() {
+            const form = document.getElementById('assessmentForm');
+            let score = 0;
+            let totalQuestions = Object.keys(correctAnswers).length;
+
+            for (let question in correctAnswers) {
+                const selectedAnswer = form[question].value;
+                if (selectedAnswer === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            const percentage = (score / totalQuestions) * 100;
+            alert(`Your score is: ${percentage.toFixed(2)}%`);
+
+            // Redirect to index.html
+            window.location.href = 'index.html'; // Replace with your index page
+        }
+
+        document.getElementById('assessmentForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            calculateScore();
+        });
+
+        startTimer();
+    </script>
+</body>
+</html>

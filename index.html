@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Research Group</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS file -->
+    <link rel="manifest" href="manifest.json"> <!-- Link to manifest file -->
+    <link rel="sitemap" type="application/xml" href="sitemap.xml"> <!-- Link to sitemap file -->
+    <link rel="shortcut icon" href="favicon.ico"> <!-- Optional: Link to favicon -->
+</head>
+<body>
+
+    <header>
+        <h1>Collaborative Research Group</h1>
+        <nav>
+            <a href="About.html">About</a>
+            <a href="Proofreading and editing.html">Services</a>
+            <a href="Assessment.html">Assessments</a>
+            <a href="Stadio textbooks online.html">Online Library</a>
+            <a href="Contact us.html">Contact</a>
+            <a href="Booking online tutorials.html">Online booking</a>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="ticker">
+            <p>Welcome to our dynamic collaborative research group, where innovative ideas meet rigorous scholarship! We are a passionate team dedicated to advancing knowledge in education, business, law, management, and psychology. Our diverse backgrounds and expertise allow us to tackle complex challenges and generate impactful solutions. By fostering collaboration, we aim to bridge gaps between theory and practice, ensuring that our research not only contributes to academic discourse but also informs real-world applications. Join us on this exciting journey of discovery as we work together to shape the future of our fields!</p>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <video width="100%" height="auto" autoplay loop muted>
+            <source src="images/Collaborative research group.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <section id="assessments">
+        <h2>Assessments</h2>
+        <div class="assessment-box">
+            <p>We provide detailed assessments tailored to your specific needs, helping you understand the strengths and weaknesses of your academic work. Our assessment services include:</p>
+            <ul>
+                <li>Review of academic papers and proposals</li>
+                <li>Feedback on research methodologies</li>
+                <li>Guidance on improving research outcomes</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="library" style="background-color: #e0f7fa; padding: 20px; border-radius: 8px;">
+        <h2>Online Library</h2>
+        <div class="library-box">
+            <p>Welcome to our Online Library. Here you can access resources for your research needs. Use the links below to find prescribed textbooks, research articles, and more.</p>
+            
+            <div class="search-section">
+                <h3>Stadio Prescribed Textbooks Group</h3>
+                <img src="images/whatsapp.png" alt="WhatsApp Logo" style="width: 40px; height: auto; vertical-align: middle;">
+                <input type="text" id="whatsapp-search" placeholder="Type your search here..." style="margin-left: 10px;">
+                <button onclick="performSearch('whatsapp', document.getElementById('whatsapp-search').value)">Search</button>
+                <p><a href="https://chat.whatsapp.com/F8Tb28MO89aHE23P2F0UXb" target="_blank">Join the Stadio Prescribed Textbooks Group on WhatsApp</a></p>
+            </div>
+    
+            <div class="search-section">
+                <h3>Google Scholar</h3>
+                <img src="images/google scholar.jpeg" alt="Google Scholar Logo" style="width: 40px; height: auto; vertical-align: middle;">
+                <input type="text" id="google-scholar-search" placeholder="Type your search here..." style="margin-left: 10px;">
+                <button onclick="performSearch('googleScholar', document.getElementById('google-scholar-search').value)">Search</button>
+                <p><a href="https://scholar.google.com/" target="_blank">Search on Google Scholar</a></p>
+            </div>
+    
+            <div class="search-section">
+                <h3>EBSCOhost</h3>
+                <img src="images/images.jpeg" alt="EBSCOhost Logo" style="width: 40px; height: auto; vertical-align: middle;">
+                <input type="text" id="ebsco-search" placeholder="Type your search here..." style="margin-left: 10px;">
+                <button onclick="performSearch('ebsco', document.getElementById('ebsco-search').value)">Search</button>
+                <p><a href="https://www.ebsco.com/" target="_blank">Access EBSCOhost</a></p>
+            </div>
+    
+            <div class="search-section">
+                <h3>Google Search</h3>
+                <img src="images/images.png" alt="Google Logo" style="width: 40px; height: auto; vertical-align: middle;">
+                <input type="text" id="google-search" placeholder="Type your search here..." style="margin-left: 10px;">
+                <button onclick="performSearch('google', document.getElementById('google-search').value)">Search</button>
+                <p><a href="https://www.google.com/" target="_blank">Google Search</a></p>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or would like to discuss your research needs, please feel free to reach out to us:</p>
+        <p><strong>Email:</strong> <a href="mailto:chibhamubenjuniortakunda@gmail.com">chibhamubenjuniortakunda@gmail.com</a></p>
+        <p><strong>Phone:</strong> +264 81 308 7329</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Collaborative Research Group. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script> <!-- Link to JavaScript files -->
+    <script src="data.js"></script>
+    <script src="logout.js"></script>
+    <script src="data.xml"></script> <!-- Optional: Link to XML file if needed -->
+</body>
+</html>
